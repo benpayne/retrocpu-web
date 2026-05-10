@@ -1,8 +1,8 @@
 # retrocpu.io
 
-Source for [retrocpu.io](https://retrocpu.io) — the website for the Retro-Active project, an open FPGA co-processor bringing modern peripherals to vintage CPUs.
+Organizing hub for the **Retro-Active project** — an open FPGA co-processor bringing modern peripherals to vintage CPUs.
 
-Built with [Astro](https://astro.build/). The hardware, firmware, and bus-design work the site documents lives at [benpayne/learn-fpga](https://github.com/benpayne/learn-fpga).
+This repo holds the public website at [retrocpu.io](https://retrocpu.io) (Astro 6) and `bus-design/` (host-CPU bridge RTL + cocotb tests). FemtoRV co-processor firmware and RetroKernel currently live in the legacy [`benpayne/learn-fpga`](https://github.com/benpayne/learn-fpga) repo and will be migrated here incrementally — new project work should land here, not there.
 
 ## Quick commands
 

@@ -4,10 +4,12 @@ Thanks for the interest. This is a hobby project — there's no money behind it,
 
 ## What lives where
 
-- **This repo (`retrocpu-web`)** — the website at retrocpu.io, plus `bus-design/` (RTL and cocotb tests for the host-CPU bridges).
-- **`benpayne/learn-fpga`** — the FemtoRV co-processor, its peripherals (PS2, HDMI GPU, FM synth, SD card, SDRAM), and the RetroKernel firmware. **All firmware and FPGA work goes there**, not here.
+This repo is the **organizing hub for the Retro-Active project**. Everything related to the project — website, bus design, co-processor firmware, FPGA work, drivers, OS — belongs here. Some of it isn't here *yet*:
 
-If your contribution is firmware or FPGA code that runs on the co-processor itself, open it against `learn-fpga`. If it's website content, a bridge bring-up, a backplane refinement, or a fix to one of the cocotb tests, you're in the right place.
+- **Here today**: the website at retrocpu.io, plus `bus-design/` (RTL and cocotb tests for the host-CPU bridges).
+- **Legacy location, migrating in**: the FemtoRV co-processor, its peripherals (PS2, HDMI GPU, FM synth, SD card, SDRAM), and the RetroKernel firmware are currently in [`benpayne/learn-fpga`](https://github.com/benpayne/learn-fpga). New firmware/peripheral work should land **here**, not there, even though the existing reference code is still over there during the transition.
+
+If you're not sure where something belongs, open an issue and ask. Default to this repo.
 
 ## Quick local setup
 
@@ -76,7 +78,6 @@ By contributing, you agree that your contributions will be licensed under the pr
 
 ## Reaching out
 
-- **Open an issue** in this repo for website/bus-design problems.
-- **Open an issue** in [benpayne/learn-fpga](https://github.com/benpayne/learn-fpga/issues) for firmware/FPGA problems.
+- **Open an issue** in this repo for anything project-related — website, bus-design, firmware, FPGA, ideas. Issues about pre-migration code still in `learn-fpga` are also welcome here; the goal is to centralize the conversation.
 
 For now, it's just me. That may change — and if it does, this file will be where the workflow gets written down.

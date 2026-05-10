@@ -4,16 +4,23 @@ Guidance for Claude Code when working in this repo.
 
 ## What this repo is
 
-This is **two things in one repo**:
+This is the **organizing hub for the Retro-Active project** — an open FPGA co-processor that gives vintage CPUs (6502, 68000, Z80, 8086) modern peripherals through a common bus. Everything related to the project will live here over time: the public website, the bus design, the FPGA co-processor, drivers, and OS work.
 
-1. **The Retro-Active website** — the Astro 6 source for [retrocpu.io](https://retrocpu.io). Public face of the project.
-2. **`bus-design/`** — feasibility proofs (RTL + cocotb tests) for the host-CPU bridges the website's Architecture page claims are buildable.
+What is here today:
 
-The wider Retro-Active project is an open FPGA co-processor that gives vintage CPUs (6502, 68000, Z80, 8086) modern peripherals through a common bus. **The actual co-processor hardware and firmware does NOT live here** — it lives at [`benpayne/learn-fpga`](https://github.com/benpayne/learn-fpga) (FemtoRV CPU, PS2 controller, HDMI GPU, FM synth, RetroKernel, etc.).
+1. **The website** — Astro 6 source for [retrocpu.io](https://retrocpu.io). Public face of the project.
+2. **`bus-design/`** — feasibility proofs (RTL + cocotb tests) for the host-CPU bridges the Architecture page describes.
 
-When writing or editing content, link to:
-- **This repo** (`benpayne/retrocpu-web`) for: bridge RTL, bridge tests, backplane reference
-- **`benpayne/learn-fpga`** for: FemtoRV co-processor, RetroKernel, peripheral drivers, bare-metal firmware
+What is *not yet* here but is part of the project:
+
+- **FemtoRV co-processor work** — currently in [`benpayne/learn-fpga`](https://github.com/benpayne/learn-fpga). PS2 controller, HDMI GPU (text + bitmap + framebuffer), FM synth, SD card, SDRAM controller, BIOS monitor, RetroKernel v0.1. **Status: legacy location, migration planned.** Do not open new firmware/peripheral work against `learn-fpga` — open it here, in a sensible directory (probably `firmware/`, `rtl/`, or similar — see "Migration in progress" below).
+- **OS / kernel concepts** — informed by the user's `beavix` x86 OS project and the external `rosco_m68k` community work. Not imports; sources of ideas. If anything from those moves into this project's scope, it lands here.
+
+### Migration in progress
+
+The split-out of this repo from `learn-fpga` (April 2026) brought over the website and `bus-design/` first because that's what `retrocpu.io` references directly. The FemtoRV co-processor and RetroKernel still live in `learn-fpga`; they will be migrated incrementally as work continues, not in a single rip-and-replace. Existing `https://github.com/benpayne/learn-fpga/...` links in site content are intentional during this transition and will be rewritten as code moves over.
+
+When in doubt about where to put a new file: **put it here**, in a sensibly named directory. Don't add to `learn-fpga`.
 
 ## Status reality check
 
