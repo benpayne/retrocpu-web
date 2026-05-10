@@ -146,5 +146,35 @@ const description =
       decisions, and the <a href={architectureHref}>architecture</a> page
       has the current state of the bus standard.
     </p>
+
+    <h2>Inspirations</h2>
+
+    <p>
+      Retro-Active stands on the shoulders of a few projects whose ideas
+      shaped how this one is put together. None of their code lives here,
+      but their thinking does:
+    </p>
+
+    <ul>
+      <li>
+        <a href="https://rosco-m68k.com/" rel="noopener">rosco_m68k</a>
+        &mdash; Ross Bamford&rsquo;s modern 68000 single-board computer.
+        Proof that a clean, well-documented retro SBC can build a community
+        around itself, and a useful reference for how the 68k side of the
+        Retro-Active bus should feel to a software author.
+      </li>
+      <li>
+        <a href="https://github.com/benpayne/beavix" rel="noopener">beavix</a>
+        &mdash; a small x86 operating system the maintainer has been
+        working on. The kernel / driver / userspace separation explored
+        there informs the OS work planned for Retro-Active main boards.
+      </li>
+      <li>
+        <a href="https://github.com/BrunoLevy/learn-fpga" rel="noopener">Bruno Levy&rsquo;s learn-fpga</a>
+        &mdash; home of the FemtoRV RISC-V cores that the reference
+        co-processor builds on. The whole reason a small, hackable RISC-V
+        soft-core is a realistic option for this project.
+      </li>
+    </ul>
   </article>
 </PageLayout>

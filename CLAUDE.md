@@ -11,14 +11,20 @@ What is here today:
 1. **The website** — Astro 6 source for [retrocpu.io](https://retrocpu.io). Public face of the project.
 2. **`bus-design/`** — feasibility proofs (RTL + cocotb tests) for the host-CPU bridges the Architecture page describes.
 
-What is *not yet* here but is part of the project:
+What is *not yet* here but is part of the project (planned migrations):
 
-- **FemtoRV co-processor work** — currently in [`benpayne/learn-fpga`](https://github.com/benpayne/learn-fpga). PS2 controller, HDMI GPU (text + bitmap + framebuffer), FM synth, SD card, SDRAM controller, BIOS monitor, RetroKernel v0.1. **Status: legacy location, migration planned.** Do not open new firmware/peripheral work against `learn-fpga` — open it here, in a sensible directory (probably `firmware/`, `rtl/`, or similar — see "Migration in progress" below).
-- **OS / kernel concepts** — informed by the user's `beavix` x86 OS project and the external `rosco_m68k` community work. Not imports; sources of ideas. If anything from those moves into this project's scope, it lands here.
+- **FemtoRV co-processor work** — currently in [`benpayne/learn-fpga`](https://github.com/benpayne/learn-fpga). PS2 controller, HDMI GPU (text + bitmap + framebuffer), FM synth, SD card, SDRAM controller, BIOS monitor, RetroKernel v0.1. **Status: legacy location, lazy migration.** New firmware/peripheral work should land here in a sensible directory (probably `firmware/`, `rtl/`, or similar), not in `learn-fpga`.
+- **The `retrocpu` codename** — a separate FPGA-based 6502 system project of the maintainer's (currently at `/opt/wip/retrocpu` locally). Planned to fold in here as the project's reference 6502 build. Don't confuse the codename with the repo name — `retrocpu-web` is the project hub, `retrocpu` is the future 6502 sub-project that will live inside it.
+
+What is **not** planned to migrate in, but is referenced as concept sources (see `src/pages/about.astro` → "Inspirations"):
+
+- **`benpayne/beavix`** — the maintainer's x86 OS project. Kernel/driver/userspace separation ideas inform the Retro-Active OS work, but no code imports.
+- **`rosco-m68k`** — external community 68k SBC by Ross Bamford. Reference for how a clean retro SBC builds a community around itself and what the 68k bus experience should feel like to a software author. No code imports.
+- **`BrunoLevy/learn-fpga`** (the upstream of `benpayne/learn-fpga`) — home of the FemtoRV cores. Imported via the legacy fork; the FemtoRV cores themselves are upstream and shouldn't be modified.
 
 ### Migration in progress
 
-The split-out of this repo from `learn-fpga` (April 2026) brought over the website and `bus-design/` first because that's what `retrocpu.io` references directly. The FemtoRV co-processor and RetroKernel still live in `learn-fpga`; they will be migrated incrementally as work continues, not in a single rip-and-replace. Existing `https://github.com/benpayne/learn-fpga/...` links in site content are intentional during this transition and will be rewritten as code moves over.
+The split-out of this repo from `learn-fpga` (April 2026) brought over the website and `bus-design/` first because that's what `retrocpu.io` references directly. The FemtoRV co-processor, RetroKernel, and the standalone `retrocpu` (FPGA 6502) project will be migrated **lazily**: code moves over when it's being actively worked on, not in a single rip-and-replace. Existing `https://github.com/benpayne/learn-fpga/...` links in site content are intentional during this transition and get rewritten as code moves.
 
 When in doubt about where to put a new file: **put it here**, in a sensibly named directory. Don't add to `learn-fpga`.
 
