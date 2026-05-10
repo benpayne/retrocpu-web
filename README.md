@@ -31,10 +31,25 @@ GitHub Pages, via Actions:
 
 ## Layout
 
+### Website (Astro)
+
 - `src/pages/` — top-level routes (home, architecture, getting-started, projects, blog)
 - `src/content/projects/` — one Markdown file per project card
 - `src/content/blog/` — blog posts
 - `src/components/` — Astro components (Header, Footer, PillarGrid, etc.)
 - `src/styles/global.css` — theme tokens, fonts, reset
 - `public/` — static assets served at the site root (fonts, images, `CNAME`)
+
+### Bus-design feasibility proofs (`bus-design/`)
+
+Reference RTL and cocotb tests for the host-CPU bridges the architecture
+page claims are feasible. Two variants of each (pure 74-series and
+single-22V10 PAL) verified by the same Python test suite.
+
+- `bus-design/rtl/` — Verilog for the 6502 and 68000 bridges, the backplane decoder, and 74-series primitives
+- `bus-design/test/` — cocotb testbenches + Makefile (`make TARGET={6502,6502_pal,68k,68k_pal}`)
+- `bus-design/docs/backplane.md` — backplane signal reference
+
+### Planning
+
 - `specs/002-retro-web/` — original design spec and planning docs for the site

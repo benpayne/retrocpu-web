@@ -17,7 +17,7 @@ links:
   - label: "6502 Bridge project"
     url: "/projects/6502-bridge/"
   - label: "Backplane reference"
-    url: "https://github.com/benpayne/learn-fpga/blob/master/bus-design/docs/backplane.md"
+    url: "https://github.com/benpayne/retrocpu-web/blob/main/bus-design/docs/backplane.md"
 ---
 
 This is the **starter board** for an 8-bit Retro-Active build. The bus standard and the bridge get you abstract behaviour; this gets you a piece of FR-4 you can put a 6502 into, plug peripheral cards into, and turn on.
@@ -36,7 +36,7 @@ Wait — that decision actually pushes back on the rest of the design. If the 65
 3. **ROM** — 8 KB minimum (boot loader + monitor); 32 KB if you want headroom for an editor or a small BASIC. Mapped at the top of the 6502's address space (0xE000–0xFFFF or 0x8000–0xFFFF).
 4. **RAM** — 32 KB or 64 KB SRAM, mapped from 0x0000 upward. Anything not RAM, ROM, or the bridge window gets bus cycles.
 5. **Slot interrupt controller** — collects 16 `IRQ_n` lines from the backplane, ORs them into the 6502's `/IRQB`, and exposes a status register so software can find which slot fired. One 22V10 plus a 74LS244 for the read-back path; lives in a fixed register at the top of the 6502 IO window.
-6. **Backplane** — four DIN 41612 96-pin connectors wired per the [backplane reference](https://github.com/benpayne/learn-fpga/blob/master/bus-design/docs/backplane.md), with the slot decoder and shared CLK/RESET on-board.
+6. **Backplane** — four DIN 41612 96-pin connectors wired per the [backplane reference](https://github.com/benpayne/retrocpu-web/blob/main/bus-design/docs/backplane.md), with the slot decoder and shared CLK/RESET on-board.
 
 ## Why a 4-slot baseline
 

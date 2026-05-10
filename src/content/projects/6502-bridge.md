@@ -10,18 +10,18 @@ components:
 order: 2
 links:
   - label: "Bridge RTL on GitHub"
-    url: "https://github.com/benpayne/learn-fpga/blob/master/bus-design/rtl/bridge_6502.v"
+    url: "https://github.com/benpayne/retrocpu-web/blob/main/bus-design/rtl/bridge_6502.v"
   - label: "PAL/GAL bridge RTL"
-    url: "https://github.com/benpayne/learn-fpga/blob/master/bus-design/rtl/bridge_6502_pal.v"
+    url: "https://github.com/benpayne/retrocpu-web/blob/main/bus-design/rtl/bridge_6502_pal.v"
   - label: "cocotb test harness"
-    url: "https://github.com/benpayne/learn-fpga/blob/master/bus-design/test/bridge_6502_tb.py"
+    url: "https://github.com/benpayne/retrocpu-web/blob/main/bus-design/test/bridge_6502_tb.py"
 ---
 
 The [Architecture](/architecture/) page makes a claim that's easy to write and harder to back up:
 
 > Each host connects through a small bridge — a handful of 74-series chips, a PAL/GAL, or a simple FPGA block — that translates the host's native cycles into bus transactions.
 
-This project puts an honest number on it: a stock **MOS 6502 running at 1 MHz** on the draft Retro-Active bus, in two complete implementations — one that uses no programmable logic at all, and one that collapses most of the glue into a single 22V10. The full Verilog and cocotb harness are in the repo at [`bus-design/`](https://github.com/benpayne/learn-fpga/tree/master/bus-design).
+This project puts an honest number on it: a stock **MOS 6502 running at 1 MHz** on the draft Retro-Active bus, in two complete implementations — one that uses no programmable logic at all, and one that collapses most of the glue into a single 22V10. The full Verilog and cocotb harness are in the repo at [`bus-design/`](https://github.com/benpayne/retrocpu-web/tree/main/bus-design).
 
 ## What the 6502 actually needs
 

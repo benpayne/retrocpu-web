@@ -8,3 +8,9 @@ dist/
 
 # jetbrains setting folder
 .idea/
+
+# bus-design simulation artifacts
+bus-design/test/sim_build*/
+bus-design/test/__pycache__/
+bus-design/test/*.vcd
+bus-design/test/results.xml

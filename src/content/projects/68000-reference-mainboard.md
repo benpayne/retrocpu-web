@@ -16,7 +16,7 @@ links:
   - label: "68000 Bridge project"
     url: "/projects/68k-bridge/"
   - label: "Backplane reference"
-    url: "https://github.com/benpayne/learn-fpga/blob/master/bus-design/docs/backplane.md"
+    url: "https://github.com/benpayne/retrocpu-web/blob/main/bus-design/docs/backplane.md"
 ---
 
 The 16-bit counterpart to the [6502 main board](/projects/6502-reference-mainboard/). Same shape — CPU + bridge + RAM + ROM + slots — but with the 68000's wider data path, full 24-bit address bus, and asynchronous /AS+/DTACK handshake.
