@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+*.log
+.env
+.env.*
+.DS_Store
+
+# jetbrains setting folder
+.idea/
